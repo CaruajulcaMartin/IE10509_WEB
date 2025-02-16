@@ -22,18 +22,6 @@ const noticias = [
         fecha: "2025-06-10",
         resumen: "Gracias a la generosidad de nuestra comunidad, hemos alcanzado el 50% de nuestro objetivo. Conoce cómo puedes seguir apoyando.",
     },
-    {
-        id: 4,
-        titulo: "Taller para Padres: Educación Emocional",
-        fecha: "2025-07-20",
-        resumen: "Invitamos a todos los padres de familia a participar en nuestro taller sobre cómo fomentar la inteligencia emocional en los niños.",
-    },
-    {
-        id: 5,
-        titulo: "Resultados de las Olimpiadas Matemáticas",
-        fecha: "2025-08-05",
-        resumen: "Felicitamos a nuestros estudiantes por su destacada participación en las Olimpiadas Matemáticas Regionales.",
-    },
 ]
 
 export default function Noticias() {

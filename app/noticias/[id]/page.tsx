@@ -11,7 +11,7 @@ const noticias = [
     {
         id: 1,
         titulo: "Inicio del Año Escolar 2025",
-        fecha: "2025-03-01",
+        fecha: "2025-03-17",
         autor: "Dirección Académica",
         tiempoLectura: "5 minutos",
         imagenUrl: "/placeholder.svg?height=400&width=800",
@@ -140,15 +140,6 @@ export default async function NoticiaDetalle({ params }: { params: Promise<{ id:
                                         ))}
                                     </div>
                                 </div>
-                            </div>
-                            <div className="mt-6 text-center">
-                                <Link
-                                    href="/noticias"
-                                    className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
-                                >
-                                    <ArrowLeft className="w-4 h-4 mr-2" />
-                                    Volver a todas las noticias
-                                </Link>
                             </div>
                         </div>
                     </div>

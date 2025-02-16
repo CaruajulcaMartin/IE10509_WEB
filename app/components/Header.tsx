@@ -1,6 +1,7 @@
 "use client"; //Esto indica que el componente debe ejecutarse en el cliente.
 
 import Link from 'next/link'
+import Image from 'next/image';
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -12,7 +13,15 @@ const Header = () => {
         <header className="bg-blue-600 text-white">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                 {/* sera remplazadom por el logo */}
-                <Link href="/" className="text-2xl font-bold">IE N° 10509</Link>
+                {/* <Link href="/" className="text-2xl font-bold">IE N° 10509</Link> */}
+                <Link href="/" className="flex items-center">
+                    <Image
+                        src="/10509-insignia.png"
+                        alt="Logo IE N° 10509"
+                        width={60}
+                        height={60}
+                    />
+                </Link>
                 <nav className="hidden md:flex space-x-4">
                     <Link href="/" className="hover:text-blue-200 transition-colors">Inicio</Link>
                     <Link href="/identidad" className="hover:text-blue-200 transition-colors">Identidad Institucional</Link>

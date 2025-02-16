@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Facebook, Instagram, Twitter } from 'lucide-react'
 
 const Footer = () => {
@@ -7,9 +8,16 @@ const Footer = () => {
         <footer className='bg-blue-800 text-white py-8'>
             <div className='container mx-auto px-4'>
                 <div className='grid md:grid-cols-3 gap-8'>
-                    <div>
+                    <div className='flex flex-col items-center'>
                         {/* este H3 se remplazara por el logo */}
-                        <h3 className='text-lg font-semibold mb-4'>IE N° 10509</h3>
+                        {/* <h3 className='text-lg font-semibold mb-4'>IE N° 10509</h3> */}
+                        <Image
+                            src="/10509-insignia.png"
+                            alt="Logo IE N° 10509"
+                            width={96}
+                            height={96}
+                            className="mb-4"
+                        />
                         <p>Formando el futuro de nuestra comunidad desde 1914</p>
                     </div>
 

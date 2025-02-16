@@ -1,4 +1,3 @@
-
 import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
 
@@ -82,8 +81,13 @@ export function generateStaticParams() {
     }));
 }
 
+interface PageProps {
+    params: {
+        id: string;
+    };
+}
 
-export default function NoticiaDetalle({ params }: { params: { id: string } }) {
+export default function NoticiaDetalle({ params }: PageProps) {
     if (!params || !params.id) {
         return notFound();
     }
@@ -141,4 +145,3 @@ export default function NoticiaDetalle({ params }: { params: { id: string } }) {
         </div>
     )
 }
-

@@ -6,10 +6,6 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Calendar, Clock, User } from 'lucide-react'
 
-interface PageProps {
-    params: { id: string };
-}
-
 // Esta es una simulación de datos. En una aplicación real, estos datos vendrían de una base de datos o API.
 const noticias = [
     {
@@ -80,13 +76,13 @@ const noticias = [
     },
 ]
 
-export default function NoticiaDetalle({ params }: PageProps) {
-    const noticiaId = Number(params.id);
-    const noticia = noticias.find(n => n.id === noticiaId);
+export default function NoticiaDetalle({ params }: { params: { id: string } }) {
+    const noticia = noticias.find(n => n.id === Number(params.id));
 
     if (!noticia) {
         return notFound();
     }
+
 
     return (
         <div className="flex flex-col min-h-screen">

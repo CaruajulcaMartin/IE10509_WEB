@@ -76,7 +76,7 @@ const noticias = [
     },
 ]
 
-export default function NoticiaDetalle({ params }: { params: { id: string } }) {
+export default async function NoticiaDetalle({ params }: { params: { id: string } }) {
     const noticia = noticias.find(n => n.id === Number(params.id));
 
     if (!noticia) {

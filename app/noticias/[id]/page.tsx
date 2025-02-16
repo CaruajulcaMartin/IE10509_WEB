@@ -76,13 +76,23 @@ const noticias = [
     },
 ]
 
+export function generateStaticParams() {
+    return noticias.map(noticia => ({
+        id: noticia.id.toString(), // Next.js requiere IDs como strings
+    }));
+}
+
+
 export default function NoticiaDetalle({ params }: { params: { id: string } }) {
+    if (!params || !params.id) {
+        return notFound();
+    }
+
     const noticia = noticias.find(n => n.id === Number(params.id));
 
     if (!noticia) {
         return notFound();
     }
-
 
     return (
         <div className="flex flex-col min-h-screen">

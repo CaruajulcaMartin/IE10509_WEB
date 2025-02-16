@@ -1,16 +1,17 @@
-import Header from '@/app/components/Header';
-import Footer from '@/app/components/Footer';
 
-import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import { Calendar, Clock, User } from 'lucide-react';
+import Header from '@/app/components/Header'
+import Footer from '@/app/components/Footer'
 
-// Simulación de datos
+import { notFound } from 'next/navigation'
+import Image from 'next/image'
+import { Calendar, Clock, User } from 'lucide-react'
+
+// Esta es una simulación de datos. En una aplicación real, estos datos vendrían de una base de datos o API.
 const noticias = [
     {
         id: 1,
         titulo: "Inicio del Año Escolar 2025",
-        fecha: "2025-03-01",
+        fecha: "2025-03-17",
         autor: "Dirección Académica",
         tiempoLectura: "5 minutos",
         imagenUrl: "/placeholder.svg?height=400&width=800",
@@ -29,39 +30,65 @@ const noticias = [
             }
         ]
     },
-    // ... otros artículos
-];
+    {
+        id: 2,
+        titulo: "Feria de Ciencias 2025",
+        fecha: "2025-05-15",
+        autor: "Departamento de Ciencias",
+        tiempoLectura: "4 minutos",
+        imagenUrl: "/placeholder.svg?height=400&width=800",
+        contenido: [
+            {
+                subtitulo: "Un evento para la innovación",
+                parrafo: "Estamos emocionados de anunciar nuestra próxima Feria de Ciencias, que se llevará a cabo el 15 de mayo de 2025. Este evento anual es una oportunidad para que nuestros estudiantes demuestren su creatividad, habilidades de investigación y pensamiento crítico a través de proyectos innovadores."
+            },
+            {
+                subtitulo: "Participación de la comunidad",
+                parrafo: "La feria estará abierta al público, y animamos a padres, familiares y miembros de la comunidad a asistir y apoyar a nuestros jóvenes científicos."
+            },
+            {
+                subtitulo: "Diversidad de proyectos",
+                parrafo: "Los proyectos abarcarán una amplia gama de temas, desde experimentos de física y química hasta investigaciones sobre el medio ambiente y la salud. ¡No se pierdan esta fascinante muestra del talento y la curiosidad científica de nuestros estudiantes!"
+            }
+        ]
+    },
+    {
+        id: 3,
+        titulo: "Campaña de Solidaridad: Avances en la Construcción del Techo",
+        fecha: "2025-06-10",
+        autor: "Comité de Infraestructura",
+        tiempoLectura: "6 minutos",
+        imagenUrl: "/placeholder.svg?height=400&width=800",
+        contenido: [
+            {
+                subtitulo: "Un gran avance",
+                parrafo: "Nos complace informar que, gracias a la generosidad y el apoyo de nuestra comunidad educativa, hemos alcanzado el 50% de nuestro objetivo en la campaña para la construcción del techo en el patio de nuestra escuela."
+            },
+            {
+                subtitulo: "Impacto del proyecto",
+                parrafo: "Este logro representa un paso significativo hacia la mejora de nuestras instalaciones y el bienestar de nuestros estudiantes. La construcción del techo proporcionará un espacio protegido para actividades al aire libre, independientemente de las condiciones climáticas."
+            },
+            {
+                subtitulo: "Llamado a la acción",
+                parrafo: "Agradecemos profundamente a todos los que han contribuido hasta ahora y animamos a quienes aún no lo han hecho a unirse a esta noble causa. Cada donación, sin importar su tamaño, nos acerca más a nuestro objetivo. Juntos, podemos crear un entorno escolar más seguro y cómodo para nuestros niños."
+            }
+        ]
+    },
+]
 
-// Genera los parámetros estáticos// Genera los parámetros estáticos
-export async function generateStaticParams() {
-    return noticias.map(noticia => ({
-        id: noticia.id.toString(), // Next.js requiere IDs como strings
-    }));
-}
-
-// Interfaz para las props
-interface PageProps {
-    params: {
-        id: string;
-    };
-}
-
-// Componente de la página
-export default async function NoticiaDetalle({ params }: PageProps) {
-    if (!params || !params.id) {
-        return notFound();
-    }
-
-    const noticia = noticias.find(n => n.id === Number(params.id));
+export default async function NoticiaDetalle({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params
+    const noticia = noticias.find((n) => n.id === Number.parseInt(id))
 
     if (!noticia) {
-        return notFound();
+        notFound()
     }
+
     return (
         <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">
-                <article className="py-12 bg-gray-50 text-black">
+                <article className="py-12 bg-gray-50">
                     <div className="container mx-auto px-4">
                         <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
                             <Image
@@ -102,5 +129,6 @@ export default async function NoticiaDetalle({ params }: PageProps) {
             </main>
             <Footer />
         </div>
-    );
+    )
 }
+

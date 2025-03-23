@@ -17,19 +17,19 @@ const noticias = [
         imagenUrl: "/porta_inicio_clases2025.jpg",
         contenido: [
             {
-                subtitulo: "Bienvenida a la comunidad educativa",
+                subtitulo: "¡Bienvenidos a un nuevo año escolar 2025!",
                 parrafo:
-                    "Nos complace dar la bienvenida a todos nuestros estudiantes al nuevo año escolar 2025. Este año promete ser emocionante y lleno de oportunidades de aprendizaje y crecimiento.",
+                    "El inicio del año escolar marca una etapa llena de aprendizaje, crecimiento y nuevas oportunidades para toda nuestra comunidad educativa. Nos complace recibir a nuestros estudiantes, docentes y familias en este emocionante ciclo académico.",
             },
             {
-                subtitulo: "Novedades para este año",
+                subtitulo: "Novedades y mejoras para este año",
                 parrafo:
-                    "Hemos preparado una serie de actividades y programas innovadores para enriquecer la experiencia educativa de nuestros alumnos. Además, contamos con nuevas instalaciones y recursos tecnológicos que facilitarán el proceso de enseñanza-aprendizaje.",
+                    "Hemos preparado una serie de innovaciones para enriquecer la experiencia educativa, incluyendo nuevos programas de aprendizaje, modernas instalaciones y avanzados recursos tecnológicos que facilitarán el desarrollo académico de nuestros alumnos.",
             },
             {
-                subtitulo: "Participación de los padres",
+                subtitulo: "Compromiso y participación de las familias",
                 parrafo:
-                    "Invitamos a todos los padres y apoderados a mantenerse informados sobre las actividades escolares y a participar activamente en la educación de sus hijos. ¡Juntos haremos de este año escolar uno para recordar!",
+                    "La educación es un trabajo en equipo, por ello invitamos a los padres y apoderados a ser parte activa del proceso formativo de sus hijos. Su apoyo y participación en actividades escolares fortalecerán el vínculo entre la institución y la comunidad, creando un entorno de aprendizaje motivador y enriquecedor. ¡Demos juntos el primer paso hacia un año inolvidable!",
             },
         ],
     },

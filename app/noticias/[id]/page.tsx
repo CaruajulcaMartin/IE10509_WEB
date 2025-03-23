@@ -14,7 +14,7 @@ const noticias = [
         fecha: "2025-03-17",
         autor: "Dirección Académica",
         tiempoLectura: "5 minutos",
-        imagenUrl: "/placeholder.svg?height=400&width=800",
+        imagenUrl: "/porta_inicio_clases2025.jpg",
         contenido: [
             {
                 subtitulo: "Bienvenida a la comunidad educativa",
